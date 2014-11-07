@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://monitoring.eu-west-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=GetMetricStatistics&Dimensions.member.1.Name=CacheClusterId&Dimensions.member.1.Value=sleekapp&EndTime=2014-11-07T16%3A00%3A53%2B01%3A00&MetricName=CurrConnections&Namespace=AWS%2FElastiCache&Period=60&StartTime=2014-11-07T15%3A54%3A53%2B01%3A00&Statistics.member.1=Maximum&Timestamp=2014-11-07T15%3A00%3A53Z&Unit=Count&Version=2010-08-01
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      Accept-Encoding:
+      - ''
+      Content-Length:
+      - '345'
+      User-Agent:
+      - aws-sdk-ruby/1.58.0 ruby/2.1.1 x86_64-darwin13.0
+      Host:
+      - monitoring.eu-west-1.amazonaws.com
+      X-Amz-Date:
+      - 20141107T150053Z
+      X-Amz-Content-Sha256:
+      - 2cd7db4ff5eddb45f07c96f455e387a732d3c0883d72d005fd79e83fbda47814
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAJVJFIFAU3KVLHDWQ/20141107/eu-west-1/monitoring/aws4_request,
+        SignedHeaders=content-length;content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=5135f05ba68e8bf3cae54424ba6c790be3339ad720577ed526ba97cec25ea246
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - dedb71e9-668e-11e4-878e-bd2338c94727
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '1207'
+      Date:
+      - Fri, 07 Nov 2014 15:00:53 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <GetMetricStatisticsResponse xmlns="http://monitoring.amazonaws.com/doc/2010-08-01/">
+          <GetMetricStatisticsResult>
+            <Datapoints>
+              <member>
+                <Timestamp>2014-11-07T14:55:00Z</Timestamp>
+                <Unit>Count</Unit>
+                <Maximum>49.0</Maximum>
+              </member>
+              <member>
+                <Timestamp>2014-11-07T14:58:00Z</Timestamp>
+                <Unit>Count</Unit>
+                <Maximum>49.0</Maximum>
+              </member>
+              <member>
+                <Timestamp>2014-11-07T14:56:00Z</Timestamp>
+                <Unit>Count</Unit>
+                <Maximum>49.0</Maximum>
+              </member>
+              <member>
+                <Timestamp>2014-11-07T14:59:00Z</Timestamp>
+                <Unit>Count</Unit>
+                <Maximum>49.0</Maximum>
+              </member>
+              <member>
+                <Timestamp>2014-11-07T14:57:00Z</Timestamp>
+                <Unit>Count</Unit>
+                <Maximum>49.0</Maximum>
+              </member>
+              <member>
+                <Timestamp>2014-11-07T14:54:00Z</Timestamp>
+                <Unit>Count</Unit>
+                <Maximum>49.0</Maximum>
+              </member>
+            </Datapoints>
+            <Label>CurrConnections</Label>
+          </GetMetricStatisticsResult>
+          <ResponseMetadata>
+            <RequestId>dedb71e9-668e-11e4-878e-bd2338c94727</RequestId>
+          </ResponseMetadata>
+        </GetMetricStatisticsResponse>
+    http_version: 
+  recorded_at: Fri, 07 Nov 2014 15:00:53 GMT
+recorded_with: VCR 2.9.3
