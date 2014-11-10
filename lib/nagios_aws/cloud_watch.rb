@@ -16,7 +16,7 @@ module Nagios
         begin
           config = OpenStruct.new(YAML.load_file(config_file_path))
         rescue
-          raise "Puts the config file aws.yml ander #{File.expand_path(config_file_path)} directory"
+          raise "Put the config file aws.yml under #{File.expand_path(config_file_path)} directory"
         end
       end
 
