@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-require_relative "../lib/nagios"
+require_relative "../lib/nagios_aws"
 
 Nagios.cloud_watch
 
