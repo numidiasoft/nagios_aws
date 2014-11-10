@@ -1,7 +1,7 @@
 require 'rspec'
 require 'vcr'
 
-require_relative '../lib/nagios.rb'
+require_relative '../lib/nagios_aws.rb'
 
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
