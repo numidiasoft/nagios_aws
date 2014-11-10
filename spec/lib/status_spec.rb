@@ -59,9 +59,9 @@ describe Nagios::Status do
       stats = [80, 20.5, 10.99]
       options.warning = 40
       options.unit = "percent"
-      nagios_status = described_class.information stats, options
+      description, status = described_class.information stats, options
       expected_response = "Metric  WARNING: 80%, 20.5%, 10.99%"
-      expect(nagios_status.string).to eql(expected_response)
+      expect(description.string).to eql(expected_response)
     end
   end
 

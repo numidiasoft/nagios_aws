@@ -25,7 +25,7 @@ module Nagios
         statistics = statistics.map do |stat| 
           "#{stat}#{Nagios::UNITS[options.unit.downcase.to_sym]}"
         end
-        StringIO.new("Metric #{options.metric} #{status}: #{statistics.join(', ')}")
+        [StringIO.new("Metric #{options.metric} #{status}: #{statistics.join(', ')}"), status]
       end
     end
   end
