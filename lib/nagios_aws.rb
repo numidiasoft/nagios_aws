@@ -10,6 +10,12 @@ module Nagios
   OK = "OK"
   WARNING = "WARNING"
   CRITICAL = "CRITICAL"
+  STATUS_CODES = {
+    OK: 0,
+    WARNING: 1,
+    CRITICAL: 2,
+    UNKNOWN: 3 
+  }
 
   class << self
     def cloud_watch
@@ -17,8 +23,10 @@ module Nagios
       Nagios::CloudWatch.config_file_path = "/etc/aws.yml"
       Nagios::CloudWatch.init
       stats = Nagios::CloudWatch.stats(options)
-      formated_stats  = Nagios::CloudWatch.format_stats(stats, options)
-      puts Nagios::Status.information(formated_stats, options).string
+      formated_stats = Nagios::CloudWatch.format_stats(stats, options)
+      description, status = Nagios::Status.information(formated_stats, options)
+      puts description.string
+      exit(STATUS_CODES[status.to_sym])
     end
   end
 end
